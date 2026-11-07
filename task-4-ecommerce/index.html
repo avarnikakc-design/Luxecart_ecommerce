@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeCart | E-Commerce Storefront</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fa-solid fa-bag-shopping"></i> LuxeCart
+        </div>
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-input" placeholder="Search products...">
+        </div>
+        <div class="cart-icon-wrapper" id="cart-toggle">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count" class="cart-badge">0</span>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="store-container">
+        <!-- Category Filter Sidebar/Bar -->
+        <div class="category-filters">
+            <button class="filter-btn active" data-category="all">All Products</button>
+            <button class="filter-btn" data-category="electronics">Electronics</button>
+            <button class="filter-btn" data-category="jewelery">Jewelry</button>
+            <button class="filter-btn" data-category="men's clothing">Men's Clothing</button>
+            <button class="filter-btn" data-category="women's clothing">Women's Clothing</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="product-grid" class="product-grid">
+            <!-- Dynamic Cards Loaded via JS -->
+        </div>
+    </main>
+
+    <!-- Slide-out Cart Drawer -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-basket-shopping"></i> Your Shopping Cart</h3>
+            <button id="close-cart" class="close-btn">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <!-- Dynamic Cart Items -->
+        </div>
+        <div class="cart-summary">
+            <div class="summary-row"><span>Subtotal:</span> <span id="cart-subtotal">$0.00</span></div>
+            <div class="summary-row"><span>Estimated Tax (8%):</span> <span id="cart-tax">$0.00</span></div>
+            <div class="summary-row"><span>Shipping:</span> <span id="cart-shipping">$0.00</span></div>
+            <div class="summary-row total-row"><span>Total:</span> <span id="cart-total">$0.00</span></div>
+            <button id="checkout-btn" class="checkout-btn" disabled>Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Backdrop -->
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <i class="fa-solid fa-circle-check success-icon"></i>
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for shopping with LuxeCart. Your order has been placed successfully.</p>
+            <div class="order-id">Order Reference: #LX-2026-9842</div>
+            <button id="close-modal" class="btn-primary">Continue Shopping</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
